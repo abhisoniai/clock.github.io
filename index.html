@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKCOL — Web Clock</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-brand">NIKCOL</div>
+        <ul class="nav-tabs">
+            <li><button class="nav-tab active" data-target="analog-section">Analog</button></li>
+            <li><button class="nav-tab" data-target="digital-section">Digital</button></li>
+            <li><button class="nav-tab" data-target="stopwatch-section">Stopwatch</button></li>
+            <li><button class="nav-tab" data-target="timer-section">Timer</button></li>
+            <li><button class="nav-tab" data-target="weather-section">Weather</button></li>
+            <li><button class="nav-tab" data-target="settings-section">Settings</button></li>
+        </ul>
+    </nav>
+
+    <main class="app-main">
+        <!-- Analog Clock Section -->
+        <section id="analog-section" class="app-section active">
+            <div class="analog-layout">
+                <div class="section-card clock-card">
+                    <h2 class="section-title">Analog Clock</h2>
+                    <div id="clock-container">
+                        <img id="clock-face" src="assets/clock.png" alt="Clock Face">
+                        <canvas id="clock-hands" width="500" height="500"></canvas>
+                    </div>
+                </div>
+                <div class="section-card sound-card">
+                    <h2 class="section-title">Sounds</h2>
+                    <div class="sound-list">
+                        <button class="sound-btn" id="focus-sound" data-sound="assets/focus.mp3">
+                            <span class="sound-icon">🎧</span>
+                            <span class="sound-label">Focus</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Clock Section -->
+        <section id="digital-section" class="app-section">
+            <div class="section-card">
+                <h2 class="section-title">Digital Clock</h2>
+                <div id="current-time" class="digital-display">00:00:00</div>
+            </div>
+        </section>
+
+        <!-- Stopwatch Section -->
+        <section id="stopwatch-section" class="app-section">
+            <div class="section-card">
+                <h2 class="section-title">Stopwatch</h2>
+                <div id="stopwatch-value" class="digital-display">00:00:00</div>
+                <div class="button-row">
+                    <button id="start-stopwatch" class="btn btn-primary">Start</button>
+                    <button id="stop-stopwatch" class="btn btn-secondary">Stop</button>
+                    <button id="reset-stopwatch" class="btn btn-tertiary">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timer Section -->
+        <section id="timer-section" class="app-section">
+            <div class="section-card">
+                <h2 class="section-title">Timer</h2>
+                <div id="timer-value" class="digital-display">00:00:00</div>
+                <div class="timer-inputs">
+                    <input type="number" id="timer-hours" placeholder="HH" min="0" max="99">
+                    <span class="input-sep">:</span>
+                    <input type="number" id="timer-minutes" placeholder="MM" min="0" max="59">
+                    <span class="input-sep">:</span>
+                    <input type="number" id="timer-seconds" placeholder="SS" min="0" max="59">
+                </div>
+                <div class="button-row">
+                    <button id="set-timer" class="btn btn-tertiary">Set</button>
+                    <button id="start-timer" class="btn btn-primary">Start</button>
+                    <button id="stop-timer" class="btn btn-secondary">Stop</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather Section -->
+        <section id="weather-section" class="app-section">
+            <div class="section-card">
+                <h2 class="section-title">Weather</h2>
+                <div id="weather-value" class="weather-display">Sunny, 22°C</div>
+                <div class="weather-search">
+                    <input type="text" id="city-input" placeholder="Enter city name..." class="city-input">
+                    <button id="search-weather" class="btn btn-primary">Search</button>
+                </div>
+                <button id="refresh-weather" class="btn btn-tertiary">Refresh</button>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings-section" class="app-section">
+            <div class="section-card settings-card">
+                <h2 class="section-title">Settings</h2>
+                <div class="setting-row">
+                    <label class="toggle-label">
+                        <span>Sound Effects</span>
+                        <label class="switch">
+                            <input type="checkbox" id="sound-toggle" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/clock.js"></script>
+    <script src="js/stopwatch.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>

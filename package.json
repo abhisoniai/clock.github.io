@@ -1,0 +1,16 @@
+{
+  "name": "clock-app",
+  "version": "1.0.0",
+  "description": "A web-based clock application with multiple features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx serve -s ."
+  },
+  "keywords": [
+    "clock",
+    "application"
+  ],
+  "author": "Claude Code Learning Project",
+  "license": "MIT"
+}
